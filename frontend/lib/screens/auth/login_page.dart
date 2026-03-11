@@ -19,7 +19,12 @@ class _LoginPageState extends State<LoginPage> {
     // HARDCODED CHECK
     if (username == "borrower" && password == "borrower123") {
       Navigator.pushReplacementNamed(context, '/borrower_home');
-    } else {
+    }
+    else if
+      (username == "librarian" && password == "librarian123") {
+      Navigator.pushReplacementNamed(context, '/librarian_home');
+    }
+     else {
       // Show error if credentials don't match
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(
@@ -79,14 +84,14 @@ class _LoginPageState extends State<LoginPage> {
                 // --- INPUT SECTION ---
                 _buildInputField(
                   label: "Username",
-                  hint: "Enter 'borrower'",
+                  hint: "Username",
                   controller: _usernameController,
                   icon: Icons.person_outline,
                 ),
                 const SizedBox(height: 20),
                 _buildInputField(
                   label: "Password",
-                  hint: "Enter 'borrower123'",
+                  hint: "Password",
                   controller: _passwordController,
                   icon: Icons.lock_outline,
                   isPassword: true,
